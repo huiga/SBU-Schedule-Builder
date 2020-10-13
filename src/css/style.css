@@ -1,0 +1,62 @@
+/* General CSS */
+html{
+    font: normal 14px Verdana;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+input[type=text]{
+    background-color: white;
+    background-image: url('https://images.vexels.com/media/users/3/132068/isolated/preview/f9bb81e576c1a361c61a8c08945b2c48-search-icon-by-vexels.png');
+    background-position: 7px 10px;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    font-size: 18px;
+    padding: 10px 40px;
+    width: 400px;
+    height: 20px;
+    border: 3px solid #ccc;
+    border-radius: 10px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+}
+input[type=text]:focus, select:focus{
+    border: 3px solid #555;
+}
+select:focus{
+    box-shadow: none;
+    outline: none;
+}
+select {
+    /* width: 100%; */
+    padding: 10px 30px 10px 5px;
+    border: 3px solid #ccc;
+    border-radius: 5px;
+    background-color: #f1f1f1;
+    outline: none;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+
+#root{
+    width: 80%;
+    min-width: 1200px;
+    margin: auto;
+    padding: 10px;
+}
+/* Searchbar */
+.header{
+    padding: 10px 15px;
+    background-color: white;
+    border-radius: 10px 10px 0px 0px;
+}
+#searchSubmit{
+    padding:10px;
+}
