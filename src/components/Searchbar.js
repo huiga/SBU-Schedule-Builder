@@ -7,22 +7,18 @@ class Searchbar extends Component {
     }
     submitHandler = (event) => {
         event.preventDefault();
-        alert("Submitting search query, look in DB.");
     }
-    // changeHandler = (event) => {
-    //     this.setState({query: event.target.value});
-    // }
     render(){
         return(
-            <div class="searchbar">
+            <div className="searchbar">
                 <form onSubmit={this.submitHandler} style={{width:'100%', display:'flex', alignItems:'center'}}>
-                    <input type='text' placeholder="Search" style={{margin:'5px 10px 5px 5px'}}/>
-                    <select id="searchField" name="search">
-                    <option value="all">All Fields</option>
-                    <option value="title">Title</option>
-                    <option value="classNum">Class Number</option>
-                    <option value="day">Day</option>
-                    <option value="time">Time</option>
+                    <input id="searchQuery" type='text' placeholder="Search (ex: CSE, CSE114, CSE1, 3, ... )" style={{margin:'5px 10px 5px 5px'}} autoComplete="off"/>
+                    <select id="searchField" className="custom-select" name="search">
+                        <option value="all">All Fields</option>
+                        <option value="title">Title</option>
+                        <option value="classNum">Class Number</option>
+                        <option value="day">Day</option>
+                        <option value="time">Time</option>
                     </select>
                     <input type='submit' value="Find" id="searchSubmit" style={{margin:'5px 5px 5px 10px'}}/>
                 </form>

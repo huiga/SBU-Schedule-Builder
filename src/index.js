@@ -10,3 +10,22 @@ ReactDOM.render( <App />, document.getElementById('root'));
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 // serviceWorker.unregister();
+
+// var mysql = require('mysql');
+// var conn = mysql.createConnection({
+//     host:"localhost",
+//     user:"root",
+//     password:"rootpassword",
+//     database:"cse316"
+// });
+// conn.connect(function(err){
+//     if(err) throw err;
+//     console.log("DB connected.");
+//     let searchQ = document.getElementById("searchQuery").value;
+//     let searchField = document.getElementById("searchField").value;
+//     console.log(searchQ);
+//     console.log(searchField);
+//     // let query = "INSERT "
+// });
+
+
