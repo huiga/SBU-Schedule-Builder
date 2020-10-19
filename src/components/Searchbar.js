@@ -1,4 +1,5 @@
-import React, {Component, useEffect, useState} from 'react';
+import React, {Component} from 'react';
+import axios from 'axios';
 import Courses from './Courses';
 
 class Searchbar extends Component {
@@ -7,17 +8,24 @@ class Searchbar extends Component {
         this.state={
             tQuery: '',
             tSearchField: 'all',
-            fQuery: '',
-            fSearchField: ''
+            courses: []
         };
     }
+
+
     submitHandler = (event) => {
         event.preventDefault();
         // State should be set upon search field changed by the onChange handlers.
-        // Now, set the final states so that Courses can do backend query
-        this.setState({fQuery: this.state.tQuery, fSearchField: this.state.tSearchField});
-        console.log(this.state.fQuery);
-        console.log(this.state.fSearchField);
+        // Do the backend queries here so that you can send new props to 
+        // the componenet Courses so it will rerender based on the elements. 
+        // this.setState({fQuery: this.state.tQuery, fSearchField: this.state.tSearchField});
+
+        //equivalent to axios.get('http://localhost:5000/api/?search=<tQuery>&field=<tSearchField>')
+        console.log("Finding", this.state.tQuery, this.state.tSearchField);
+        axios.get("/api/", { params: { search: this.state.tQuery, field: this.state.tSearchField }}).then(response => {
+            console.log(response.data);
+        })
+
     }
     queryHandler = (event) => {
         event.preventDefault();
@@ -45,7 +53,7 @@ class Searchbar extends Component {
                     <input type='submit' value="Find" id="searchSubmit" style={{margin:'5px 5px 5px 10px'}}/>
                 </form>
                 <div className="courseList">
-                    <Courses query={this.state.fQuery} queryField={this.state.fSearchField} />
+                    <Courses queriedValues={this.state.courses} />
                 </div>
             </div>
         )
