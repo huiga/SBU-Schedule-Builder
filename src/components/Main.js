@@ -21,7 +21,7 @@ class Main extends Component {
                     <hr/>
                     <Searchbar/>
                 </div>
-                <Courses query="CSE114" field="All fields"/>
+                <Courses/>
             </div>
         )
     }

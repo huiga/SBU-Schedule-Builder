@@ -1,23 +1,30 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 // Main container that will hold the courses.
 class Courses extends Component {
-    state = {
-        courses: []
+    constructor(props){
+        super(props)
+        // this.state={
+        //     courses = []
+        // };
     }
-
     componentDidMount(){
+        console.log("mounting");
         let query = this.props.query;
-        let qfield = this.props.field;
-        console.log(query);
-        console.log(qfield);
-        // fetch("http://localhost:5000/", )
+        let qfield = this.props.queryField;
+        axios.get("/api/", { params: { search: query, field: qfield }}).then(response => {
+            console.log(response.data);
+        })
+        // axios.get('/').then(response => {
+        //     console.log(response.data);
+        // })
     }
     render() { 
         return(
-            <div class="courseContainer" name="courseContainer">
+            <div className="courseContainer" name="courseContainer">
                 <p>{this.props.query}</p>
-                <p>{this.props.field}</p>
+                <p>{this.props.queryField}</p>
             </div>
         );
     }
