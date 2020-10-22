@@ -26,7 +26,7 @@ class Courses extends Component {
         // Props are passed to a component from a parent for it to use.
         // In this case, the props are what you will be using to render the 
         // course list. 
-        console.log("In the component did update: ", this.props.queriedValues);
+        // console.log("In the component did update: ", this.props.queriedValues);
     }
     render() { 
         return(
