@@ -16,8 +16,9 @@ class Courses extends Component {
     componentWillMount(){
         axios.get("http://localhost:5000/").then(response => {
             this.setState({courses: response.data});
-            console.log("componentWillMount Courses: ", this.state.courses);
-        })
+            console.log("componentWillMount Courses: ", response.data);
+        });
+        // Now, format all the courses into a page. 
     }
 
     componentDidUpdate(){
@@ -26,13 +27,13 @@ class Courses extends Component {
         // Props are passed to a component from a parent for it to use.
         // In this case, the props are what you will be using to render the 
         // course list. 
-        // console.log("In the component did update: ", this.props.queriedValues);
+        // this.setState({courses: this.props.courses});
+        console.log("In the component did update: ", this.props.courses.data);
     }
     render() { 
         return(
             <div className="courseContainer" name="courseContainer">
-                <p>{this.props.query}</p>
-                <p>{this.props.queryField}</p>
+                {/* <p>{this.props.courses}</p> */}
             </div>
         );
     }

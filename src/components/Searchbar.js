@@ -22,10 +22,11 @@ class Searchbar extends Component {
 
         //equivalent to axios.get('http://localhost:5000/api/?search=<tQuery>&field=<tSearchField>')
         console.log("Finding", this.state.tQuery, this.state.tSearchField);
-        axios.get("/api/", { params: { search: this.state.tQuery, field: this.state.tSearchField }}).then(response => {
+        axios.get("/api/get", { params: { search: this.state.tQuery, field: this.state.tSearchField }}).then(response => {
             console.log(response.data);
-        })
-
+            this.setState({courses: response.data});
+            this.props.callbackFromParent(response.data);
+        });
     }
     queryHandler = (event) => {
         event.preventDefault();
@@ -52,9 +53,9 @@ class Searchbar extends Component {
                     </select>
                     <input type='submit' value="Find" id="searchSubmit" style={{margin:'5px 5px 5px 10px'}}/>
                 </form>
-                <div className="courseList">
+                {/* <div className="courseList">
                     <Courses queriedValues={this.state.courses} />
-                </div>
+                </div> */}
             </div>
         )
     }
