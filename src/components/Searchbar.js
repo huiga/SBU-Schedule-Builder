@@ -40,7 +40,7 @@ class Searchbar extends Component {
     }
     render(){
         return(
-            <div className="searchbar">
+            <div className="searchbar" width="100%">
                 <form onSubmit={this.submitHandler} style={{width:'100%', display:'flex', alignItems:'center'}}>
                     <input id="searchQuery" type='text' placeholder="Search (ex: CSE, CSE114, CSE1, 3, ... )" 
                         style={{margin:'5px 10px 5px 5px'}} autoComplete="off" onChange={this.queryHandler}/>
@@ -51,12 +51,10 @@ class Searchbar extends Component {
                         <option value="day">Day</option>
                         <option value="time">Time</option>
                     </select>
-                    <input type='submit' value="Find" id="searchSubmit" style={{margin:'5px 5px 5px 10px'}}/>
+                    <input type='submit' value="Find" id="searchSubmit" style={{margin: '5px 5px 5px 10px'}}/>
                 </form>
-                {/* <div className="courseList">
-                    <Courses queriedValues={this.state.courses} />
-                </div> */}
             </div>
+            
         )
     }
 }
