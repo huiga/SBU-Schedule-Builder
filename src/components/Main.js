@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Searchbar from './Searchbar'
-import Courses from './Courses'
+import CourseList from './CourseList'
 
 class Main extends Component {
     state = {
@@ -20,7 +20,7 @@ class Main extends Component {
                     <hr/>
                     <Searchbar callbackFromParent={this.searchCallBack}/>
                 </div>
-                <Courses courses={this.state.courses}/>
+                <CourseList courses={this.state.courses}/>
             </div>
         )
     }

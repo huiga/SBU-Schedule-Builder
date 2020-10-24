@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import Courses from './Courses';
+
 
 class Searchbar extends Component {
     constructor(props){

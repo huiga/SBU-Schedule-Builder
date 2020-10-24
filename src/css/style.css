@@ -13,8 +13,8 @@ hr {
 }
 
 #root{
-    width: 80%;
-    min-width: 1200px;
+    width: 70%;
+    min-width: 1000px;
     margin: auto;
     padding: 10px;
 }
@@ -72,5 +72,12 @@ input[type=text]:focus, #searchField:focus{
 /* Course Container */
 .courseContainer{
     background-color: white;
-    padding: 10px 20px;
+    padding: 10px 25px;
+}
+.courseContainer:nth-child(even){
+    background-color: #e8eaeb;
+}
+.courseContainer:last-child{
+    padding-bottom: 20px;
+    border-radius: 0px 0px 10px 10px;
 }
