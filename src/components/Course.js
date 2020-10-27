@@ -10,6 +10,10 @@ class Course extends Component {
     addClass = (event) => {
         event.preventDefault();
         console.log(this.props.class);
+        let prop = this.props.class;
+        axios.get('api/get/schedule', { params: {newCourse: prop["crsTag"], component: prop["component"], lecture: prop["lecture"]}}).then(response => {
+            console.log(response);
+        })
     }
 
     render(){
