@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { Component } from 'react';
+import { withRouter} from "react-router-dom";
 
 // Main container that will hold the courses.
 class Course extends Component {
@@ -9,11 +10,13 @@ class Course extends Component {
 
     addClass = (event) => {
         event.preventDefault();
-        console.log(this.props.class);
+        // console.log(this.props.class);
         let prop = this.props.class;
-        axios.get('api/get/schedule', { params: {newCourse: prop["crsTag"], component: prop["component"], lecture: prop["lecture"]}}).then(response => {
-            console.log(response);
+        axios.get('api/add/schedule', { params: {newCourse: prop["crsTag"], name: prop["crsName"], component: prop["component"], lecture: prop["lecture"]}}).then(response => {
+            this.props.history.push('/schedule')
         })
+        // Push the /schedule page onto the browser stack. 
+        // this.props.history.push('/schedule')
     }
 
     render(){
@@ -33,7 +36,11 @@ class Course extends Component {
                             <td/>
                             <td>Same Courses</td>
                             <td>by {v["instr"]} Credit: </td>
-                            <td><button id="add" type="button" className="btn btn-primary" onClick={this.addClass}>Add</button></td>
+                            <td>
+                                {/* <Link to="/schedule"> Add </Link> */}
+                                <button id="add" type="button" className="btn btn-primary" onClick={this.addClass}>Add</button>
+                                {/* </Link> */}
+                            </td>
                         </tr>
                         <tr>
                             <td></td>
@@ -47,4 +54,4 @@ class Course extends Component {
     }
 }
 
-export default Course;
+export default withRouter (Course);

@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import Searchbar from './Searchbar'
 import CourseList from './CourseList'
-import axios from 'axios'
 class Main extends Component {
     state = {
         courses: []
@@ -13,7 +12,7 @@ class Main extends Component {
     }
 
     loadSchedule = (event) => {
-
+        this.props.history.push('/schedule')
     }
     
     render(){

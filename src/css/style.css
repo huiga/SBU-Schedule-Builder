@@ -81,3 +81,43 @@ input[type=text]:focus, #searchField:focus{
     padding-bottom: 20px;
     border-radius: 0px 0px 10px 10px;
 }
+
+/* Schedule */
+.week {
+    background-color: #414245;
+    border: #b7b9bd;
+    box-sizing:border-box;
+    color: white;
+    float:left;
+    line-height: 1.5em;
+    /* margin:auto; */
+    width:180px;
+    text-align: center;
+}
+.day{
+    background-color: #ebeded;
+    box-sizing:border-box;
+    color: #3e3e40;
+    width:180px;
+    height:450px;
+    margin:auto;
+    border:1px solid #b7b9bd;
+}
+.day p{
+    text-align:start;
+}
+.dayCourse{
+    background-color: #c5e0e0;
+    width:100%;
+    margin: 5px 0px;
+    padding: 10px 0px;
+    /* border-style: solid;
+    border-color: 3px transparent transparent transparent #59d0eb; */
+    border-left: 3px solid #57abc2;
+}
+.dayCourse p{
+    font-size:13px;
+}
+#backToSearch{
+    margin:5% 0px 0px 43.5%;
+}

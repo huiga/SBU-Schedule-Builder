@@ -10,7 +10,7 @@ class Searchbar extends Component {
             tSearchField: 'all',
             courses: []
         };
-    }
+    };
 
 
     submitHandler = (event) => {
@@ -23,7 +23,7 @@ class Searchbar extends Component {
         //equivalent to axios.get('http://localhost:5000/api/?search=<tQuery>&field=<tSearchField>')
         console.log("Finding", this.state.tQuery, this.state.tSearchField);
         axios.get("/api/get", { params: { search: this.state.tQuery, field: this.state.tSearchField }}).then(response => {
-            console.log(response.data);
+            // console.log(response.data);
             this.setState({courses: response.data});
             this.props.callbackFromParent(response.data);
         });
