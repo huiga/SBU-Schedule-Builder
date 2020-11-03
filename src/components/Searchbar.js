@@ -15,27 +15,18 @@ class Searchbar extends Component {
 
     submitHandler = (event) => {
         event.preventDefault();
-        // State should be set upon search field changed by the onChange handlers.
-        // Do the backend queries here so that you can send new props to 
-        // the componenet Courses so it will rerender based on the elements. 
-        // this.setState({fQuery: this.state.tQuery, fSearchField: this.state.tSearchField});
-
-        //equivalent to axios.get('http://localhost:5000/api/?search=<tQuery>&field=<tSearchField>')
         console.log("Finding", this.state.tQuery, this.state.tSearchField);
         axios.get("/api/get", { params: { search: this.state.tQuery, field: this.state.tSearchField }}).then(response => {
-            // console.log(response.data);
             this.setState({courses: response.data});
             this.props.callbackFromParent(response.data);
         });
     }
     queryHandler = (event) => {
         event.preventDefault();
-        // console.log(event.target.value);
         this.setState({tQuery: event.target.value});
     }
     searchFieldHandler = (event) => {
         event.preventDefault();
-        // console.log(event.target.value);
         this.setState({tSearchField: event.target.value});
     }
     render(){

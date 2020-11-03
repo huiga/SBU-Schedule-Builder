@@ -27,7 +27,6 @@ class Schedule extends Component {
     
     render(){
         document.body.style = 'background-color: #990000; maxWidth:100%; height:100vh; overflow: auto';
-        // if(this.state.currentSchedule)
         return(
             <div className="schedulePage">
                 <div className="weekContainer" width="100%">

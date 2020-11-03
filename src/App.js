@@ -3,7 +3,7 @@ import React from 'react';
 import './css/style.css';
 import Main from './components/Main'
 import Schedule from './components/Schedule'
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 // import './css/App.css';
 
 function App() {

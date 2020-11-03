@@ -10,7 +10,6 @@ class Course extends Component {
 
     addClass = (event) => {
         event.preventDefault();
-        // console.log(this.props.class);
         let prop = this.props.class;
         axios.get('api/add/schedule', { params: {newCourse: prop["crsTag"], name: prop["crsName"], component: prop["component"], lecture: prop["lecture"]}}).then(response => {
             this.props.history.push('/schedule')
@@ -20,7 +19,6 @@ class Course extends Component {
     }
 
     render(){
-        // console.log(this.props.class);
         let v = this.props.class;
         let component = v["component"] === null ? "" : "LAB: "+v["component"]+" ";
         return(
@@ -37,9 +35,7 @@ class Course extends Component {
                             <td>Same Courses</td>
                             <td>by {v["instr"]} Credit: </td>
                             <td>
-                                {/* <Link to="/schedule"> Add </Link> */}
                                 <button id="add" type="button" className="btn btn-primary" onClick={this.addClass}>Add</button>
-                                {/* </Link> */}
                             </td>
                         </tr>
                         <tr>
